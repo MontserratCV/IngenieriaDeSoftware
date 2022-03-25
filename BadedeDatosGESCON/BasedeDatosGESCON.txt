@@ -1,0 +1,34 @@
+create database GESCON;
+use GESCON;
+
+create table evento (comite_del_programa varchar(20) not null primary key);
+
+create table congreso (
+	programa_del_congreso integer(10) not null primary key,
+    comitedelprograma varchar(20),
+    foreign key (comitedelprograma) references evento(comite_del_programa));
+    
+create table aviso (asistente int not null auto_increment primary key);
+    
+create table iniciodesesion (
+	id_sesion int not null auto_increment primary key,
+    autor integer(10) not null,
+    notifiacion integer(10) not null,
+    asistente int,
+   foreign key (asistente) references aviso(asistente));
+
+create table revisor (
+	id_revisor int not null auto_increment primary key,
+    evalluacion integer(10) not null,
+    articulo integer(10) not null,
+    idsesion int,
+    foreign key (idsesion) references iniciodesesion(id_sesion));
+    
+create table congreso_revisor (
+	congresoprograma_del_congreso integer (10) not null primary key,
+    idrevisor int,
+    programadelcongreso integer,
+	constraint congresorevisor_fk1 foreign key(idrevisor) references revisor(id_revisor),
+	constraint congresorevisor_fk2 foreign key(programadelcongreso) references congreso(programa_del_congreso)
+    );
+    
