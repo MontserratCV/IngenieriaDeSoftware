@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <meta charset="UFT-8">
+        <title>Enviar Articulo</title>
+    </head>
+    <body>
+        <form>
+        <div class="titulo">
+            <h4>Titulo</h4>
+            <input type="text" name="tit" value="Escribe el titulo" maxlength="35">
+        </div>
+        <div class="autor">
+            <h4>Autor</h4>
+            <table>
+                <tr>
+                    <th>Nombre</th>
+                    <th>E-mail</th>
+                    <th>Afiliacion</th>
+                    <th>Contacto</th>
+                </tr>
+                <tr></tr>
+                 
+            </table>
+        </div>
+        <div class="topico">
+            <h4>Topicos del articulo</h4>
+            <input class="top" type="checkbox" name="Topico 1">
+            <label for="top1">Topico 1</label><br>
+            <input class="top" type="checkbox" name="Topico 2">
+            <label for="top2">Topico 2</label><br>
+            <input class="top" type="checkbox" name="Topico 3">
+            <label for="top3">Topico 3</label><br>
+            <input class="top" type="checkbox" name="Topico 4">
+            <label for="top4">Topico 4</label>
+
+        </div>
+        <div class="fichero">
+            <h4>Sube tu archivo aqui:</h4>
+            <input type="file" name="archivo" class="arc" required><br><br>
+            <input type="submit" class="arc">
+        </div>
+    </form>
+    </body>
+</html>  
